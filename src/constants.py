@@ -31,3 +31,12 @@ ARGPARSE_EPILOG = (
     f"NOTE: certain special characters are not allowed in pattern names ['{VALUES_SEPARATOR}', "
     f"'{NAME_MULTIPLEXOR}', '*']."
 )
+
+
+
+
+
+
+
+
+B = b"ICAgIF9fXwogLCB8IGwgfCAKKCggfCBsIHwgKSkKICAgfCBsIHwgJwogICAgXF8vCiAgIC8uLi5c\nLS0uICAgXyAgCiAgID09PT09ICBgLS0oXz0=\n"

@@ -4,10 +4,12 @@ rere can save regex patterns you use frequently and retrieve them later on. rere
 to an online source for patterns you have not found."""
 import argparse
 from sys import stderr
+from os import remove
 from pathlib import Path
 from io import StringIO
-from .constants import ARGPARSE_DESCRIPTION, ARGPARSE_EPILOG, RERE_HOME
+from .constants import ARGPARSE_DESCRIPTION, ARGPARSE_EPILOG, RERE_HOME, B
 from .rc import RereRC
+from .prompt import user_bool
 
 
 def setup_argparse() -> argparse.ArgumentParser:
@@ -75,11 +77,54 @@ def setup_argparse() -> argparse.ArgumentParser:
         type=str,
         nargs="*",
     )
-    parser.add_argument("-b", help="it must do something", action="store_true")
+    parser.add_argument(
+        "-b",
+        type=int,
+        metavar="?",
+    )
 
     return parser
 
-def main():
+def add_pattern(name: str, pattern: str, force: bool, rererc: RereRC) -> bool:
+    if name in rererc and not force:
+        if not user_bool(
+            f"{name} already exists as {rererc.get_pattern(name)} do you want to override it? "
+        ):
+            return False
+
+    rererc.set_pattern(name, pattern)
+    return True
+
+def export(rererc: RereRC) -> None:
+    print(rererc.export_patterns())
+
+def print_rererc(rererc: RereRC) -> None:
+    print(rererc.export_config())
+    print(rererc.export_patterns())
+
+def delete_file(path: Path) -> None:
+    try:
+        if path.exists:
+            remove(str(path))
+    except OSError:
+        pass
+
+def gimme_dj(mystery_val: int) -> None:
+    """Play that funky music."""
+    # If youre worried about what this is doing, and NEED TO KNOW. Check this gist:
+    # https://gist.github.com/SalomonSmeke/2dfef1f714851ae8c6933c71dad701ba
+    # its nothing evil. just an inside joke for my good buddy Brian.
+    from importlib import import_module
+    hey: str = getattr(
+        import_module("".join(chr(c) for c in [98, 97, 115, 101, 54, 52])),
+        "".join(chr(c) for c in [100, 101, 99, 111, 100, 101, 98, 121, 116, 101, 115]),
+    )(B)
+    brian: str = getattr(
+        hey, "".join(chr(c - (503 - mystery_val)) for c in [183, 184, 182, 194, 183, 184])
+    )("".join(chr(c) for c in [117, 116, 102, 45, 56]))
+    print(brian)
+
+def main() -> None:
     parser = setup_argparse()
     args = parser.parse_args()
 
@@ -91,24 +136,26 @@ def main():
     else:
         rererc = RereRC(StringIO(), str(rc_path))
 
-    if args.init:
+    if args.init: # type: ignore
         rererc.configure()
-    elif args.add:
-        add_pattern(
-            args.add,
-            args.force,
-            local=args.local,
-            online=args.online,
-            no_save=getattr(args, "no-save"),
-            save=args.save,
-        )
-    elif args.export:
-        pass
-    elif args.jinkies:
-        pass
-    elif args.zoinks:
-        pass
-    elif args.b:
+    elif args.add: # type: ignore
+        if not args.REGULAR_EXPRESSION_NAME: # type: ignore
+            parser.print_help(stderr)
+            exit(1)
+
+        add_pattern(args.REGULAR_EXPRESSION_NAME, args.add, args.force, rererc) # type: ignore
+    elif args.export: # type: ignore
+        export(rererc)
+    elif args.jinkies: # type: ignore
+        if rc_path.exists():
+            print_rererc(rererc)
+
+        delete_file(rc_path)
+    elif args.zoinks: # type: ignore
+        delete_file(rc_path)
+    elif args.b: # type: ignore
+        gimme_dj(args.b)
+    elif args.REGULAR_EXPRESSION_NAME: # type: ignore
         pass
     else:
         parser.print_help(stderr)
