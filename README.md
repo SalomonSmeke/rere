@@ -15,7 +15,7 @@ ack $(rere vowels)
 Add a pattern  
 `rere --add vowels|v [aeiou] # [aeiou]`
 
-Retrieve it  
+Retrieve it
 ```
 rere v # [aeiou]
 rere vowels # [aeiou]
@@ -24,7 +24,7 @@ rere vowels # [aeiou]
 Overwrite it  
 `rere --add vowels --force [aeiouAEIOU] # [aeiouAEIOU]`
 
-Retrieve it  
+Retrieve it
 ```
 rere v # [aeiou]
 rere vowels # [aeiouAEIOU]
@@ -47,20 +47,20 @@ Use it with ack to find vowels
 You do not have to donate. I do not need your money. But if you want to, I will definitely appreciate it!  
 Any donations over 10$ are way too high and ill send the extra to charity. But I keep all the feelings of validation.  
 
-## [License](https://github.com/SalomonSmeke/rere/blob/dev/LICENSE)
-
 ## Patternfile format
 
-`!` indicates the start of a pattern line.
-`^` indicates the start of a config line.
-`!PATTERNNAME:PATTERN` general formatting.
-`!PATTERNNAME1|PATTERNNAME2:PATTERN` two acceptable names.
-`!PA:TTERNNAME:PATTERN` bad pattern name.
-`!^123:PATTERN` totally fine.
-`!PATTERNNAME:[!:^]` totally fine.
+`!` indicates the start of a pattern line.  
+`^` indicates the start of a config line.  
+`!PATTERNNAME:PATTERN` general formatting.  
+`!PATTERNNAME1|PATTERNNAME2:PATTERN` two acceptable names.  
+`!PA:TTERNNAME:PATTERN` bad pattern name.  
+`!^123:PATTERN` totally fine.  
+`!PATTERNNAME:[!:^]` totally fine.  
 ```
 !PATTERNNAME:[ \t
 ]
-```
-multi line like that isnt allowed.
+```  
+multi line like that isnt allowed.  
 `!PATTERNNAME:[ \t\n]` but like that is fine.
+
+## [License](https://github.com/SalomonSmeke/rere/blob/dev/LICENSE)
