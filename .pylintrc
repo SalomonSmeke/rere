@@ -1,0 +1,5 @@
+[MASTER]
+
+disable=bad-continuation
+ignore=CVS
+jobs=4

@@ -49,18 +49,18 @@ Any donations over 10$ are way too high and ill send the extra to charity. But I
 
 ## Patternfile format
 
-`!` indicates the start of a pattern line.  
-`^` indicates the start of a config line.  
-`!PATTERNNAME:PATTERN` general formatting.  
-`!PATTERNNAME1|PATTERNNAME2:PATTERN` two acceptable names.  
-`!PA:TTERNNAME:PATTERN` bad pattern name.  
-`!^123:PATTERN` totally fine.  
-`!PATTERNNAME:[!:^]` totally fine.  
+`PATTERNNAME:PATTERN` general formatting.  
+`PATTERNNAME1|PATTERNNAME2:PATTERN` two acceptable names.  
+`PA:TTERNNAME:PATTERN` bad pattern name.  
+`PATTERNNAME:[:]` totally fine.
+`PATTERNNAME::` totally fine.  
 ```
-!PATTERNNAME:[ \t
+PATTERNNAME:[ \t
 ]
 ```  
 multi line like that isnt allowed.  
-`!PATTERNNAME:[ \t\n]` but like that is fine.
+`PATTERNNAME:[ \t\n]` but like that is fine.
+
+TODO: Add a description of the pattern flavor, allow selecting one.
 
 ## [License](https://github.com/SalomonSmeke/rere/blob/dev/LICENSE)

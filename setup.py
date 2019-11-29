@@ -24,7 +24,6 @@ setup(
         "Intended Audience :: System Administrators",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
@@ -39,8 +38,8 @@ setup(
         "Tracker": "https://github.com/SalomonSmeke/rere/issues",
         "Donations": "https://paypal.me/ssmeke",
     },
-    python_requires=">=3.5",
-    install_requires=[],
+    python_requires=">=3.6",
+    install_requires=["mypy"],
     entry_points={
         "pytest11": ["tox_tested_package=tox_tested_package.fixtures"],
         "console_scripts": ["rere=src.entry:main"],
