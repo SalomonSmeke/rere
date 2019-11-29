@@ -79,38 +79,39 @@ def setup_argparse() -> argparse.ArgumentParser:
 
     return parser
 
-parser = setup_argparse()
-args = parser.parse_args()
+def main():
+    parser = setup_argparse()
+    args = parser.parse_args()
 
-rc_path = Path(RERE_HOME).joinpath(".rererc")
-rererc = None
-if rc_path.exists():
-    with open(str(rc_path), "r") as file:
-        rererc = RereRC(file, str(rc_path))
-else:
-    rererc = RereRC(StringIO(), str(rc_path))
+    rc_path = Path(RERE_HOME).joinpath(".rererc")
+    rererc = None
+    if rc_path.exists():
+        with open(str(rc_path), "r") as file:
+            rererc = RereRC(file, str(rc_path))
+    else:
+        rererc = RereRC(StringIO(), str(rc_path))
 
-if args.init:
-    rererc.configure()
-elif args.add:
-    add_pattern(
-        args.add,
-        args.force,
-        local=args.local,
-        online=args.online,
-        no_save=getattr(args, "no-save"),
-        save=args.save,
-    )
-elif args.export:
-    pass
-elif args.jinkies:
-    pass
-elif args.zoinks:
-    pass
-elif args.b:
-    pass
-else:
-    parser.print_help(stderr)
-    exit(1)
+    if args.init:
+        rererc.configure()
+    elif args.add:
+        add_pattern(
+            args.add,
+            args.force,
+            local=args.local,
+            online=args.online,
+            no_save=getattr(args, "no-save"),
+            save=args.save,
+        )
+    elif args.export:
+        pass
+    elif args.jinkies:
+        pass
+    elif args.zoinks:
+        pass
+    elif args.b:
+        pass
+    else:
+        parser.print_help(stderr)
+        exit(1)
 
-exit(0)
+    exit(0)

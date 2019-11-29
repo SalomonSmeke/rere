@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="rere-ssmeke",
-    version="0.0.0.dev0",
+    version="0.0.0.dev1",
     author="Salomon Smeke Cohen",
     author_email="salomon@ssmeke.io",
     description="A regex storage and retrieval tool",
@@ -43,6 +43,6 @@ setup(
     install_requires=[],
     entry_points={
         "pytest11": ["tox_tested_package=tox_tested_package.fixtures"],
-        "console_scripts": ["rere=src.entry"],
+        "console_scripts": ["rere=src.entry:main"],
     },
 )

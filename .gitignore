@@ -7,6 +7,8 @@ __pycache__/
 *$py.class
 .Python
 *.egg-info/
+build/
+dist/
 
 # Installer logs
 pip-log.txt
