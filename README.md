@@ -48,3 +48,19 @@ You do not have to donate. I do not need your money. But if you want to, I will 
 Any donations over 10$ are way too high and ill send the extra to charity. But I keep all the feelings of validation.  
 
 ## [License](https://github.com/SalomonSmeke/rere/blob/dev/LICENSE)
+
+## Patternfile format
+
+`!` indicates the start of a pattern line.
+`^` indicates the start of a config line.
+`!PATTERNNAME:PATTERN` general formatting.
+`!PATTERNNAME1|PATTERNNAME2:PATTERN` two acceptable names.
+`!PA:TTERNNAME:PATTERN` bad pattern name.
+`!^123:PATTERN` totally fine.
+`!PATTERNNAME:[!:^]` totally fine.
+```
+!PATTERNNAME:[ \t
+]
+```
+multi line like that isnt allowed.
+`!PATTERNNAME:[ \t\n]` but like that is fine.

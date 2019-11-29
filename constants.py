@@ -2,7 +2,9 @@
 from os import getenv
 from pathlib import Path
 
-DEFAULT_LOOKUP_LOCATION = "https://stub.com"
+DEFAULT_LOOKUP_LOCATION = (
+    "https://raw.githubusercontent.com/SalomonSmeke/rere/dev/patternfiles/basic.rere"
+)
 
 VALUES_SEPARATOR = ":"
 NAME_MULTIPLEXOR = "|"
@@ -27,5 +29,5 @@ ARGPARSE_EPILOG = (
     f"at which point you will be prompted for its initial values. You can change these anytime by "
     f"editing the file directly, or running the config wizard."
     f"NOTE: certain special characters are not allowed in pattern names ['{VALUES_SEPARATOR}', "
-    f"'{NAME_MULTIPLEXOR}', '*', '{CONFIG_VALUES_INDICATOR}']."
+    f"'{NAME_MULTIPLEXOR}', '*']."
 )
