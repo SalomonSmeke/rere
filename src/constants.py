@@ -3,7 +3,7 @@ from os import getenv
 from pathlib import Path
 
 DEFAULT_LOOKUP_LOCATION = (
-    "https://raw.githubusercontent.com/SalomonSmeke/rere/dev/patternfiles/basic.rere"
+    "https://raw.githubusercontent.com/SalomonSmeke/rere/dev/assets/basic.rere"
 )
 
 VALUES_SEPARATOR = ":"

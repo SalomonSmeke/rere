@@ -2,8 +2,8 @@
 from typing import NamedTuple, Union, List, Dict, Tuple, DefaultDict
 from typing import TextIO
 from collections import defaultdict
-from prompt import user_bool, user_string
-from constants import (
+from .prompt import user_bool, user_string
+from .constants import (
     DEFAULT_LOOKUP_LOCATION,
     PATTERN_INDICATOR,
     CONFIG_VALUES_INDICATOR,

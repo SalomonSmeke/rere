@@ -14,7 +14,7 @@ setup(
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/SalomonSmeke/rere",
-    packages=find_packages(include=["rere"]),
+    packages=find_packages(),
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Environment :: Console",
@@ -43,6 +43,6 @@ setup(
     install_requires=[],
     entry_points={
         "pytest11": ["tox_tested_package=tox_tested_package.fixtures"],
-        "console_scripts": ["rere=rere:entry"],
+        "console_scripts": ["rere=src.entry"],
     },
 )
