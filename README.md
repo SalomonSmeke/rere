@@ -1,44 +1,50 @@
-WIP: does not do anything yet.
+<sub>WIP dont use</sub>
+# rere: retrieve regex
 
-# rere: recall regex
+rere is a regex notepad and search tool. It lets you save patterns you use frequently, and search for ones you use infrequently.  
 
-rere is a regex storage and retrieval tool.
-rere can save regex patterns you use frequently and retrieve them later on.  
+## Get started by finding some vowels
 
-crucially, if you have not stored a pattern, rere can search an online source for it.
+```
+pip install rere-ssmeke
+ack $(rere vowels)
+```
 
-(my personal use of it is as a regex search engine)
+## More usage
 
-## Example Usage:
-
-Add a pattern
+Add a pattern  
 `rere --add vowels|v [aeiou] # [aeiou]`
 
-Retrieve it
-`rere v # [aeiou]`
-`rere vowels # [aeiou]`
+Retrieve it  
+```
+rere v # [aeiou]
+rere vowels # [aeiou]
+```
 
-Overwrite it
+Overwrite it  
 `rere --add vowels --force [aeiouAEIOU] # [aeiouAEIOU]`
 
-Retrieve it
-`rere v # [aeiou]`
-`rere vowels # [aeiouAEIOU]`
+Retrieve it  
+```
+rere v # [aeiou]
+rere vowels # [aeiouAEIOU]
+```
 
-Remove it
+Remove it  
 `rere --remove vowels # [aeiouAEIOU]`
 
-Retrieve it from the web!
+Retrieve it from the web!  
 `rere vowels # [aeiou]`
 
-You have it locally now
+You have it locally now  
 `rere --local vowels # [aeiou]`
 
-Use it with ack to find vowels
+Use it with ack to find vowels  
 `ack $(rere vowels)`
 
-## Donations:
+## Donations [![Donate](https://img.shields.io/badge/PayPal-ssmeke-blue)](https://www.paypal.me/ssmeke)
 
-You do not have to donate. I do not need your money. But if you want to, I will definitely appreciate it!
-Any donations over 10$ are going to the ACLU or the Conservation Fund. But I keep all the feelings of validation.
-[![Donate](https://img.shields.io/badge/PayPal-ssmeke-blue)](https://www.paypal.me/ssmeke)
+You do not have to donate. I do not need your money. But if you want to, I will definitely appreciate it!  
+Any donations over 10$ are way too high and ill send the extra to charity. But I keep all the feelings of validation.  
+
+## [License](https://github.com/SalomonSmeke/rere/blob/dev/LICENSE)
