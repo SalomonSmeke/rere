@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="rere-ssmeke",
-    version="0.0.0.dev1",
+    version="0.0.0.dev2",
     author="Salomon Smeke Cohen",
     author_email="salomon@ssmeke.io",
     description="A regex storage and retrieval tool",
