@@ -1,5 +1,7 @@
 # rere: retrieve regex
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b97ea2abfb94475fa29d96e0a6d7b0aa)](https://www.codacy.com/manual/ssmeke/rere?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SalomonSmeke/rere&amp;utm_campaign=Badge_Grade)
+
 rere is a regex notepad and search tool. It lets you save patterns you use frequently, and search for ones you use infrequently.  
 
 It is very much still in development, and should be considered just an alpha MVP for now.  
