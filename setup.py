@@ -1,4 +1,3 @@
-# type: ignore
 """Setup"""
 from setuptools import find_packages, setup
 
@@ -7,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="reretrieve",
-    version="0.0.0.dev3",
+    version="0.0.0.dev4",
     author="Salomon Smeke Cohen",
     author_email="salomon@ssmeke.io",
     description="A regex storage and retrieval tool",
@@ -39,7 +38,7 @@ setup(
         "Donations": "https://paypal.me/ssmeke",
     },
     python_requires=">=3.6",
-    install_requires=["mypy"],
+    install_requires=["mypy", "urllib3"],
     entry_points={
         "pytest11": ["tox_tested_package=tox_tested_package.fixtures"],
         "console_scripts": ["rere=src.entry:main"],
