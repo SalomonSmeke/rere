@@ -7,11 +7,13 @@ frequently, and search for ones you use infrequently.
 
 It is very much still in development, and should be considered just an alpha MVP for now.
 
-## Get started by finding some vowels
+[Test PyPi Entry (will transition to regular PyPi once not in Alpha)](https://test.pypi.org/project/reretrieve/)
 
-```sh
-pip install --index-url https://test.pypi.org/simple/ reretrieve
-ack $(rere vowels)
+## Get started by finding some vowels with rere and [ack](https://beyondgrep.com/)
+
+```console
+$ pip install --index-url https://test.pypi.org/simple/ reretrieve
+$ ack $(rere vowels)
 ```
 
 ## More usage
@@ -35,7 +37,7 @@ $ rere vowels
 Overwrite it:
 
 ```console
-$ rere --add [aeiouAEIOU] --force vowels
+$ rere --add "[aeiouAEIOU]" --force vowels
 [aeiouAEIOU]
 ```
 
@@ -55,7 +57,7 @@ $ rere vowels
 
 Use it with ack to find vowels:
 ```console
-ack $(rere vowels)
+$ ack $(rere vowels)
 ```
 
 ## Donations
