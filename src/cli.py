@@ -41,6 +41,7 @@ def make_arg_parser() -> ArgumentParser:
         "--no-save",
         "-n",
         help="Prevent the pattern from saving, if it is looked up externally.",
+        dest="no_save",
         action="store_true",
     )
     parser.add_argument(

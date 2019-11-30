@@ -1,12 +1,13 @@
-<sub>WIP dont use</sub>
 # rere: retrieve regex
 
 rere is a regex notepad and search tool. It lets you save patterns you use frequently, and search for ones you use infrequently.  
 
+It is very much still in development, and should be considered just an alpha MVP for now.  
+
 ## Get started by finding some vowels
 
 ```
-pip install rere-ssmeke
+pip3 install --index-url https://test.pypi.org/simple/ reretrieve
 ack $(rere vowels)
 ```
 
@@ -48,6 +49,8 @@ You do not have to donate. I do not need your money. But if you want to, I will 
 Any donations over 10$ are way too high and ill send the extra to charity. But I keep all the feelings of validation.  
 
 ## Patternfile format
+
+The patternfile format is VERY much going to change. Probably to some sensible TOML/YML/JSON thing.
 
 `PATTERNNAME:PATTERN` general formatting.  
 `PATTERNNAME1|PATTERNNAME2:PATTERN` two acceptable names.  

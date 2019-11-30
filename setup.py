@@ -6,8 +6,8 @@ with open("README.md", "r") as fh:
     README = fh.read()
 
 setup(
-    name="rere-ssmeke",
-    version="0.0.0.dev2",
+    name="reretrieve",
+    version="0.0.0.dev3",
     author="Salomon Smeke Cohen",
     author_email="salomon@ssmeke.io",
     description="A regex storage and retrieval tool",
@@ -16,7 +16,7 @@ setup(
     url="https://github.com/SalomonSmeke/rere",
     packages=find_packages(),
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
+        "Development Status :: 3 - Alpha",
         "Environment :: Console",
         "Framework :: tox",
         "Intended Audience :: Developers",
